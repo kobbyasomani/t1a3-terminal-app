@@ -29,8 +29,14 @@ The app has a list of fun and encouraging phrases it can use in response to user
 The user's score and stats are tracked and updated at the end of each round of the guessing game. These stats are displayed above the category selection menu at the end of each round.
 
 ## Implementation Plan
-This application was developed following an implementation plan tracked using Trello.
+This application was developed following an implementation plan tracked using Kanban-style project management software Trello.
+
+My implementation plan includes task cards assigned to a list of academic requirements, a to-do list of core coding tasks (broken down by feature), and a list of optional 'nice-to-have' features to be implemented if time permits.
+
+Task cards are moved from their respective lists to 'In Progress' and 'Done' as the project progresses.
 [**View the Trello board for this project.**](https://trello.com/b/uixdH4cn)
+
+![My task lists on Trello at the start of coding.](./docs/kasomani_t1a3_trello-board.png)
 
 
 ## Help Documentation
