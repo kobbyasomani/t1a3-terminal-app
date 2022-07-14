@@ -10,6 +10,7 @@ class Secret():
         "medium": [],
         "hard": []
     ]
+    category: str
 
     def get_answer(self):
         return self.answer
@@ -21,3 +22,27 @@ class Secret():
                 return True
         else:
             return False
+
+    def add_to_secrets_list(self):
+        if self.category in secrets:
+            secrets[self.category].append(self)
+        else:
+            secrets[self.category] = self.category
+            secrets[self.category].append(self)
+
+
+unicorn = Secret(
+    "unicorn",
+    {
+        "easy": ["I have a long spiral horn."],
+        "medium": ["I have the tail of a lion and the feet of a deer."],
+        "hard": ["I am immortal."]
+    },
+    "mythical creatures"
+)
+
+secrets = {
+    "mythical creatures": []
+}
+
+unicorn.add_to_secrets_list()
