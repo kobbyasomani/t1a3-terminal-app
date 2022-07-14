@@ -31,6 +31,12 @@ class TestMenu(unittest.TestCase):
         user_selection = ""
         self.assertFalse(menu.has_option(user_selection))
 
+    # Test category selection and assignment by category name
+    def test_set_selection(self):
+        menu = Menu(["item1", "item2", "item3"])
+        user_selection = "item1"
+        self.assertEqual(user_selection, menu.set_selection(user_selection))
+
 
 # Test printing method
 # menu = Menu(["item1","item2","item3"])
