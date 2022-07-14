@@ -1,4 +1,5 @@
 from menu import menu_categories
+from player import Player
 
 def main():
     menu_categories.print_menu()
