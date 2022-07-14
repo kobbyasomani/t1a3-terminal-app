@@ -51,6 +51,10 @@ class Menu():
             print(
                 f"I'm sorry, {user_selection} is not one of the available options.")
 
+    # Get the selected menu item
+    def get_selection(self):
+        return self.selected_category
+    
     # Prompt the user for menu item selection
     def prompt_for_selection(self):
         user_selection = input("Select a category from the menu: ")
