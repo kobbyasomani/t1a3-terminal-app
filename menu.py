@@ -23,39 +23,29 @@ class Menu():
     def has_option(self, user_selection):
         if (user_selection):
             if user_selection.isnumeric() and int(user_selection) in range(1, self.get_length()+1):
-                return True
+                return [True, self.menu_items[int(user_selection)-1]]
             elif user_selection.lower() in self.menu_items:
-                return True
+                return [True, user_selection]
             else:
                 for item in self.menu_items:
                     if user_selection.lower() in item:
-                        return True
+                        return [True, item]
         else:
             return False
 
-        #     for index, name in enumerate(self.menu_items):
-        #         if user_selection.isnumeric():
-        #             if int(user_selection) == index+1:
-        #                 return True
-        #         elif user_selection.lower() == name.lower():
-        #             return True
-        #         else:
-        #             continue
-        # else:
-        #     return False
-
     # If the user selection is valid, set their selection as the selected category
     def set_selection(self, user_selection):
-        if self.has_option(user_selection):
+        chosen_option = self.has_option(user_selection)
+        if chosen_option[0] == True:
             if user_selection.isnumeric():
                 self.selected_category = self.menu_items[int(user_selection)-1]
                 print(
-                    f"You have selected the category: {self.selected_category}!")
+                    f"You have selected the category: {self.selected_category.title()}!")
                 return self.selected_category
             else:
-                self.selected_category = user_selection.title()
+                self.selected_category = chosen_option[1]
                 print(
-                    f"You have selected the category: {self.selected_category}!")
+                    f"You have selected the category: {self.selected_category.title()}!")
                 return self.selected_category
         else:
             print(
