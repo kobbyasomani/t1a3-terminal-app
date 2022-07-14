@@ -36,7 +36,7 @@ My implementation plan includes task cards assigned to a list of academic requir
 Task cards are moved from their respective lists to 'In Progress' and 'Done' as the project progresses.
 [**View the Trello board for this project.**](https://trello.com/b/uixdH4cn)
 
-![My task lists on Trello at the start of coding.](./docs/kasomani_t1a3_trello-board.png)
+![My task lists on Trello at the start of coding.](./docs/kasomani_t1a3_trello-board_2048px.jpg)
 
 
 ## Help Documentation
