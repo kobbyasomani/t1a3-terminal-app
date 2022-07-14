@@ -15,24 +15,34 @@ class Menu():
     def print_menu(self):
         if self.get_length() > 0:
             for index, item in enumerate(self.menu_items):
-                print(f"{index + 1}: {item}")
+                print(f"{index + 1}: {item.title()}")
         else:
             print("There are no menu items available.")
 
     # Check if the user selection matches a menu item (by index number or value)
     def has_option(self, user_selection):
         if (user_selection):
-            for index, name in enumerate(self.menu_items):
-                print(name)
-                if user_selection.isnumeric():
-                    if int(user_selection) == index+1:
+            if user_selection.isnumeric() and int(user_selection) in range(1, self.get_length()+1):
+                return True
+            elif user_selection.lower() in self.menu_items:
+                return True
+            else:
+                for item in self.menu_items:
+                    if user_selection.lower() in item:
                         return True
-                elif user_selection.lower() == name.lower():
-                    return True
-                else:
-                    continue
         else:
             return False
+
+        #     for index, name in enumerate(self.menu_items):
+        #         if user_selection.isnumeric():
+        #             if int(user_selection) == index+1:
+        #                 return True
+        #         elif user_selection.lower() == name.lower():
+        #             return True
+        #         else:
+        #             continue
+        # else:
+        #     return False
 
     # If the user selection is valid, set their selection as the selected category
     def set_selection(self, user_selection):
@@ -51,10 +61,10 @@ class Menu():
             print(
                 f"I'm sorry, {user_selection} is not one of the available options.")
 
-    # Get the selected menu item
+    # Get the selected menu item (category)
     def get_selection(self):
         return self.selected_category
-    
+
     # Prompt the user for menu item selection
     def prompt_for_selection(self):
         user_selection = input("Select a category from the menu: ")
@@ -62,7 +72,7 @@ class Menu():
 
 
 menu_categories = Menu([
-    "Numbers",
-    "Mythical Creatures",
-    "Famous Monuments"
+    "numbers",
+    "mythical creatures",
+    "famous monuments"
 ])
