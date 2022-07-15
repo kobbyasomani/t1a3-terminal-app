@@ -11,19 +11,21 @@ class Player():
 
     # Get a player attribute by passing the attribute name as an argument
     def get(self, attr=str):
-        # if hasattr(self, attr):
         try:
             return getattr(self, attr)
         except AttributeError:
             print(f"{attr} is not a Player attribute.")
 
     def increment(self, attr):
-        try:
-            attribute = getattr(self, attr)
-            attribute += 1
-            return attribute
-        except AttributeError:
-            print(f"{attr} is not a Player attribute.")
+        if attr != "avg_guesses_to_answer":
+            try:
+                attribute = getattr(self, attr)
+                attribute += 1
+                return attribute
+            except AttributeError:
+                print(f"{attr} is not a Player attribute.")
+        else:
+            print("avg_guesses_to_answer cannot be incremented.")
 
 
 player1 = Player()
