@@ -24,11 +24,11 @@ class Secret():
             return False
 
     def add_to_secrets_list(self):
-        if self.category in secrets:
-            secrets[self.category].append(self)
+        if self.category in list_secrets:
+            list_secrets[self.category].append(self)
         else:
-            secrets[self.category] = self.category
-            secrets[self.category].append(self)
+            list_secrets[self.category] = self.category
+            list_secrets[self.category].append(self)
 
 
 unicorn = Secret(
@@ -41,7 +41,7 @@ unicorn = Secret(
     "mythical creatures"
 )
 
-secrets = {
+list_secrets = {
     "mythical creatures": []
 }
 

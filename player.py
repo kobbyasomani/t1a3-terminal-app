@@ -39,4 +39,4 @@ class Player():
 
 
 player1 = Player()
-print(player1.calc_avg_guesses())
+#print(player1.calc_avg_guesses())
