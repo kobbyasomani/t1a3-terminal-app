@@ -7,6 +7,7 @@ class Player():
     games_played = 0
     games_won = 0
     games_lost = 0
+    total_guesses = 0
     avg_guesses_to_answer = 0.0
 
     # Get a player attribute by passing the attribute name as an argument
@@ -27,7 +28,7 @@ class Player():
         else:
             print("avg_guesses_to_answer cannot be incremented.")
 
-    def calc_avg_guesses(self, total_guesses, games_played):
+    def calc_avg_guesses(self, total_guesses=total_guesses, games_played=games_played):
         try:
             self.avg_guesses_to_answer = total_guesses / games_played
             return self.avg_guesses_to_answer
@@ -38,3 +39,4 @@ class Player():
 
 
 player1 = Player()
+print(player1.calc_avg_guesses())
