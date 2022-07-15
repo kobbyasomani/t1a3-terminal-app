@@ -9,5 +9,6 @@ def main():
     menu_categories.print_menu()
     while menu_categories.selected_category == "":
         menu_categories.prompt_for_selection()
+    guessing_loop.start(menu_categories.get_selection().lower())
 
 main()

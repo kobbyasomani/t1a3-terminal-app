@@ -25,10 +25,9 @@ class GuessingLoop():
         clue = list_secrets[category][secret].get_clue(difficulty)
         return clue
 
-    # def start():
+    def start(self, category=menu_categories.get_selection()):
         # Select a 'secret' at random from the chosen category
-        # secret = random.choice(list_secrets[menu_categories.selected_category])
-        # print(secret.answer.title())
+        self.get_secret(category)
 
         # present a clue to the user and take input
 
