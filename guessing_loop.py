@@ -27,9 +27,11 @@ class GuessingLoop():
 
     def start(self, category=menu_categories.get_selection()):
         # Select a 'secret' at random from the chosen category
-        self.get_secret(category)
+        secret = self.get_secret(category)
 
         # present a clue to the user and take input
+        print(f"Here's your first clue: {self.get_clue(category, secret)}")
+        # guess = input("")
 
         # update remaining and used guesses
 

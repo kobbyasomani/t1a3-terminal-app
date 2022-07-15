@@ -21,3 +21,8 @@ class TestGuessingLoop(unittest.TestCase):
         category = "mythical creatures"
         guessing_loop.start(category)
         self.assertNotEqual(guessing_loop.current_secret, "")
+
+    # Test that there are no guesses remaining
+    def test_guesses_remaining(self):
+        guessing_loop = GuessingLoop()
+        self.assertEqual(guessing_loop.remaining_guesses, 0)
