@@ -1,6 +1,5 @@
 import unittest
 from guessing_loop import GuessingLoop
-from secret import list_secrets
 
 
 class TestGuessingLoop(unittest.TestCase):

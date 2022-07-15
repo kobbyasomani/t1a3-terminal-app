@@ -23,7 +23,7 @@ class GuessingLoop():
 
     def get_clue(self, category=menu_categories.get_selection(), secret=current_secret, difficulty="hard"):
         clue = list_secrets[category][secret].get_clue(difficulty)
-        print(clue)
+        return clue
 
     # def start():
         # Select a 'secret' at random from the chosen category
@@ -44,5 +44,5 @@ class GuessingLoop():
 
         # update menu at the end of the guessing round (show stats at the top)
 
-# menu_categories.selected_category = "mythical creatures"
-# guessing_loop()
+
+guessing_loop = GuessingLoop()
