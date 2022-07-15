@@ -27,5 +27,9 @@ class Player():
         else:
             print("avg_guesses_to_answer cannot be incremented.")
 
+    def calc_avg_guesses(self, total_guesses, games_played):
+        self.avg_guesses_to_answer = total_guesses / games_played
+        return self.avg_guesses_to_answer
+
 
 player1 = Player()
