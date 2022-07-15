@@ -7,6 +7,7 @@ from guessing_loop import guessing_loop
 def main():
     game_host.welcome(player1)
     menu_categories.print_menu()
-    menu_categories.prompt_for_selection()
+    while menu_categories.selected_category == "":
+        menu_categories.prompt_for_selection()
 
 main()

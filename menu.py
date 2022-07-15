@@ -31,7 +31,7 @@ class Menu():
                     if user_selection.lower() in item:
                         return [True, item]
         else:
-            return False
+            return [False, user_selection]
 
     # If the user selection is valid, set their selection as the selected category
     def set_selection(self, user_selection):
@@ -47,9 +47,11 @@ class Menu():
                 print(
                     f"You have selected the category: {self.selected_category.title()}!")
                 return self.selected_category
+        elif user_selection == "":
+            print(f"It looks like you didn't enter anything...")
         else:
             print(
-                f"I'm sorry, {user_selection} is not one of the available options.")
+                f"I'm sorry, '{user_selection}' is not one of the available options.")
 
     # Get the selected menu item (category)
     def get_selection(self):
