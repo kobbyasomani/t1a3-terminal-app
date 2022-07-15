@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import random
 
 
 @dataclass
@@ -22,6 +23,9 @@ class Secret():
                 return True
         else:
             return False
+
+    def get_clue(self, difficulty="hard"):
+        return random.choice(self.clues[difficulty])
 
     def add_to_secrets_list(self):
         if self.category in list_secrets:
@@ -52,10 +56,10 @@ dragon = Secret(
 )
 
 list_secrets = {
-    "mythical creatures": [
-        unicorn,
-        dragon
-    ]
+    "mythical creatures": {
+        "unicorn": unicorn,
+        "dragon": dragon
+    }
 }
 
 

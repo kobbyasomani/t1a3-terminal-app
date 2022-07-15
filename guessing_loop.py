@@ -8,14 +8,22 @@ import random
 class GuessingLoop():
     """A class for selecting secrets and clues, and tracking the guessing loop state"""
     round_num = 1
-    secret = ""
+    current_secret = ""
     used_guesses = 0
     remaining_guesses = 3
     is_running = False
 
-    def get_secret(self, category=menu_categories.selected_category):
-        secret = random.choice(list_secrets[category]).get_answer()
+    def get_secret(self, category=menu_categories.get_selection()):
+        keys = []
+        for key, secret in list_secrets[category].items():
+            keys.append(key)
+        secret = random.choice(keys)
+        self.secret = secret
         return secret
+
+    def get_clue(self, category=menu_categories.get_selection(), secret=current_secret, difficulty="hard"):
+        clue = list_secrets[category][secret].get_clue(difficulty)
+        print(clue)
 
     # def start():
         # Select a 'secret' at random from the chosen category
