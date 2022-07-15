@@ -2,7 +2,7 @@ from player import player1
 
 
 class GameHost:
-    """A class for keeping track of player stats"""
+    """A class for displaying user feedback messages"""
 
     def __init__(self):
         self.feedback = ""
