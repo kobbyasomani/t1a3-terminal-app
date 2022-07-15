@@ -3,7 +3,7 @@ from player import Player
 
 
 class TestPlayer(unittest.TestCase):
-    
+
     # Test getting a player attribute
     def test_no_games_played(self):
         player = Player()
@@ -14,9 +14,18 @@ class TestPlayer(unittest.TestCase):
         player = Player()
         self.assertGreater(player.increment("games_played"), 0)
 
-    # Test calculating the average guesses to an answer
+    # Test calculating the average guesses to a correct answer
     def test_calculate_avg_guesses_to_answer(self):
         player = Player()
         games_played = 5
         total_guesses = 9
-        self.assertEqual(player.calc_avg_guesses(total_guesses, games_played), 1.8)
+        self.assertEqual(player.calc_avg_guesses(
+            total_guesses, games_played), 1.8)
+
+    # Test calculating average guesses when there are no games played
+    def test_calculate_avg_guesses_to_answer_zero(self):
+        player = Player()
+        games_played = 0
+        total_guesses = 0
+        self.assertEqual(player.calc_avg_guesses(
+            total_guesses, games_played), 0)
