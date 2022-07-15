@@ -9,12 +9,21 @@ class Player():
     games_lost = 0
     avg_guesses_to_answer = 0.0
 
-    def get_games_played(self):
-        return self.games_played
+    # Get a player attribute by passing the attribute name as an argument
+    def get(self, attr=str):
+        # if hasattr(self, attr):
+        try:
+            return getattr(self, attr)
+        except AttributeError:
+            print(f"{attr} is not a Player attribute.")
 
-    def increment_games_played(self):
-        self.games_played += 1
-        return self.games_played
+    def increment(self, attr):
+        try:
+            attribute = getattr(self, attr)
+            attribute += 1
+            return attribute
+        except AttributeError:
+            print(f"{attr} is not a Player attribute.")
 
 
 player1 = Player()
