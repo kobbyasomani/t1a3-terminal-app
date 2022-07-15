@@ -18,7 +18,7 @@ class GuessingLoop():
         for key, secret in list_secrets[category].items():
             keys.append(key)
         secret = random.choice(keys)
-        self.secret = secret
+        self.current_secret = secret
         return secret
 
     def get_clue(self, category=menu_categories.get_selection(), secret=current_secret, difficulty="hard"):
