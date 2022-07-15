@@ -1,26 +1,40 @@
-import random
+from dataclasses import dataclass
 from menu import menu_categories
-from secret import secrets
+from secret import list_secrets
+import random
 
-def guessing_loop():
-    #Select a 'secret' at random from the chosen category
-    secret = random.choice(secrets[menu_categories.selected_category])
-    # print(secret.answer.title())
 
-    # present a clue to the user and take input
+@dataclass
+class GuessingLoop():
+    """A class for selecting secrets and clues, and tracking the guessing loop state"""
+    round_num = 1
+    secret = ""
+    used_guesses = 0
+    remaining_guesses = 3
+    is_running = False
 
-    # update remaining and used guesses
+    def get_secret(self, category=menu_categories.selected_category):
+        secret = random.choice(list_secrets[category]).get_answer()
+        return secret
 
-    # decrement remaining guesses if the guess does not match the secret
+    # def start():
+        # Select a 'secret' at random from the chosen category
+        # secret = random.choice(list_secrets[menu_categories.selected_category])
+        # print(secret.answer.title())
 
-    # give feedback after each guess
+        # present a clue to the user and take input
 
-    # end the loop if the guess matches the secret
+        # update remaining and used guesses
 
-    # update overall user stats at the end of the guessing round
+        # decrement remaining guesses if the guess does not match the secret
 
-    # update menu at the end of the guessing round (show stats at the top)
+        # give feedback after each guess
+
+        # end the loop if the guess matches the secret
+
+        # update overall user stats at the end of the guessing round
+
+        # update menu at the end of the guessing round (show stats at the top)
 
 # menu_categories.selected_category = "mythical creatures"
 # guessing_loop()
-

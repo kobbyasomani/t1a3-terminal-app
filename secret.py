@@ -41,8 +41,22 @@ unicorn = Secret(
     "mythical creatures"
 )
 
+dragon = Secret(
+    "dragon",
+    {
+        "easy": ["I breathe scorching fire."],
+        "medium": ["I have scales like a serpent, hard as rock"],
+        "hard": ["I am very long-lived."]
+    },
+    "mythical creatures"
+)
+
 list_secrets = {
-    "mythical creatures": []
+    "mythical creatures": [
+        unicorn,
+        dragon
+    ]
 }
 
-unicorn.add_to_secrets_list()
+
+# unicorn.add_to_secrets_list()
