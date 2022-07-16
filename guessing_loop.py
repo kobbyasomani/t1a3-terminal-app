@@ -29,28 +29,40 @@ class GuessingLoop():
     def use_guess(self):
         self.guesses_used += 1
         self.guesses_remaining -= 1
+        return self.guesses_remaining
 
     def start(self, category=menu_categories.get_selection()):
         # Initialise user guess variable and select a random secret from category
         guess = ""
         secret = self.get_secret(category)
+        guesses_remaining = self.guesses_remaining
+        guesses_used = self.guesses_used
+        difficulty = "hard"
 
         # Start guessing loop
-        while guess != secret:
+        while guess != secret and guesses_remaining > 0:
             # present a clue to the user and take input
-            clue = self.get_clue(category, secret)
-            gamehost.give_clue(clue, self.guesses_remaining)
+            clue = self.get_clue(category, secret, difficulty)
+            gamehost.give_clue(clue, guesses_remaining)
             guess = input("Enter you guess: ").lower()
 
             # update remaining and used guesses
-            self.use_guess()
+            guesses_remaining = self.use_guess()
 
-            # give feedback after each guess
+            # Give feedback after each guess
+            # Win
             if guess == secret:
-                gamehost.congratulate(self.guesses_used)
+                gamehost.congratulate(guesses_used)
+            # Miss
+            elif guess != secret and guesses_remaining > 0:
+                if guesses_remaining == 2:
+                    difficulty = "medium"
+                elif guesses_remaining == 1:
+                    difficulty = "easy"
+                gamehost.encourage("miss", guesses_remaining)
+            # Loss
             else:
-                gamehost.encourage()
-                gamehost.give_clue()
+                gamehost.encourage("loss", guesses_remaining)
 
         # end the loop if the guess matches the secret
 

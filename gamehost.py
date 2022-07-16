@@ -42,13 +42,13 @@ class GameHost:
                 "Sorry, you're out of guesses!",
                 "I'm afraid that's your last guess.",
                 "Oops, that's not it either!",
-                "Three strikes and you're out!"
+                "Three strikes and you're out!",
                 "Drat, another miss. Are these clues too difficult?"
             ]
         }
         return random.choice(response_prefixes[guess_type])
 
-    def encourage(self, guess_type, guesses_remaining):
+    def encourage(self, guess_type=str, guesses_remaining=int):
         if guess_type == "miss":
             self.feedback = f"{self.get_prefix('miss')}\nYou have {guesses_remaining} guesses left..."
         elif guess_type == "loss":
