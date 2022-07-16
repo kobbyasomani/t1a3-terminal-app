@@ -8,7 +8,7 @@ class GameHost:
         self.feedback = ""
 
     def give_feedback(self):
-        print(self.feedback)
+        print(f"\n{self.feedback}")
 
     def welcome(self):
         if player1.games_played == 0:
@@ -17,7 +17,7 @@ class GameHost:
 
     def give_clue(self, clue, guesses_remaining):
         if guesses_remaining == 3:
-            self.feedback = f"And we're off! Can you guess it in one go?\nHere's your first clue:\n{clue}"
+            self.feedback = f"And we're off! Can you guess it in one go?\nHere's your first clue: {clue}"
             self.give_feedback()
 
 

@@ -26,17 +26,25 @@ class GuessingLoop():
         clue = list_secrets[category][secret].get_clue(difficulty)
         return clue
 
+    def use_guess(self):
+        self.guesses_used += 1
+        self.guesses_remaining -= 1
+
     def start(self, category=menu_categories.get_selection()):
+        # Initialise user guess variable as empty string
+        guess = ""
+
         # Select a 'secret' at random from the chosen category
         secret = self.get_secret(category)
 
-        # present a clue to the user and take input
-        clue = self.get_clue(category, secret)
-        gamehost.give_clue(clue, self.guesses_remaining)
+        while guess != secret:
+            # present a clue to the user and take input
+            clue = self.get_clue(category, secret)
+            gamehost.give_clue(clue, self.guesses_remaining)
+            guess = input("Enter you guess: ")
 
-        # guess = input("")
-
-        # update remaining and used guesses
+            # update remaining and used guesses
+            self.use_guess()
 
         # decrement remaining guesses if the guess does not match the secret
 
