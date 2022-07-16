@@ -19,17 +19,19 @@ class TestGameHost(unittest.TestCase):
     # Test giving encouragement message after miss (incorrect guess)
     def test_encourage_player_miss(self):
         gamehost = GameHost()
+        guess = "dog"
         guess_type = "miss"
         guesses_remaining = 2
-        encouragement_message = gamehost.encourage(guess_type, guesses_remaining)
+        encouragement_message = gamehost.encourage(guess, guess_type, guesses_remaining)
         self.assertEqual(encouragement_message, gamehost.feedback)
 
     # Test giving encouraging message after loss (incorrect final guess)
     def test_encourage_player_loss(self):
         gamehost = GameHost()
+        guess = "dog"
         guess_type = "loss"
         guesses_remaining = 0
-        encouragement_message = gamehost.encourage(guess_type, guesses_remaining)
+        encouragement_message = gamehost.encourage(guess, guess_type, guesses_remaining)
         self.assertEqual(encouragement_message, gamehost.feedback)
     
     # Test congratulating player after a win

@@ -11,7 +11,7 @@ class Player():
     avg_guesses_to_answer = 0.0
 
     # Get a player attribute by passing the attribute name as an argument
-    def get(self, attr=str):
+    def get(self, attr: str):
         try:
             return getattr(self, attr)
         except AttributeError:
@@ -39,4 +39,4 @@ class Player():
 
 
 player1 = Player()
-#print(player1.calc_avg_guesses())
+# print(player1.calc_avg_guesses())
