@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from menu import menu_categories
 from secret import list_secrets
+from gamehost import gamehost
 import random
 
 
@@ -30,7 +31,7 @@ class GuessingLoop():
         secret = self.get_secret(category)
 
         # present a clue to the user and take input
-        print(f"Here's your first clue: {self.get_clue(category, secret)}")
+        print(f"\nHere's your first clue: {self.get_clue(category, secret)}")
         # guess = input("")
 
         # update remaining and used guesses

@@ -29,7 +29,7 @@ class TestMenu(unittest.TestCase):
     def test_menu_does_not_have_option(self):
         menu = Menu(["item1", "item2", "item3"])
         user_selection = ""
-        self.assertFalse(menu.has_option(user_selection))
+        self.assertFalse(menu.has_option(user_selection)[0])
 
     # Test category selection and assignment by category name
     def test_set_selection(self):

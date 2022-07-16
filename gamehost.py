@@ -13,4 +13,4 @@ class GameHost:
         print(self.feedback)
 
 
-game_host = GameHost()
+gamehost = GameHost()
