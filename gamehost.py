@@ -58,13 +58,13 @@ class GameHost:
         self.give_feedback()
         return self.feedback
 
-    def congratulate(self, guesses_used):
+    def congratulate(self, guess, guesses_used):
         responses = [
             "You figured it out in just one guess!",
             "That second clue really clinched it for you!",
             "You got there in the end!"
         ]
-        self.feedback = f"{self.get_prefix('win')} {responses[guesses_used-1]}"
+        self.feedback = f"{self.get_prefix('win')} {guess.title()} is correct. {responses[guesses_used-1]}"
         self.give_feedback()
         return self.feedback
 

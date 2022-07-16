@@ -36,5 +36,6 @@ class TestGameHost(unittest.TestCase):
     def test_congratulate_player(self):
         gamehost = GameHost()
         guesses_used = 1
-        congratulation_message = gamehost.congratulate(guesses_used)
+        guess = "unicorn"
+        congratulation_message = gamehost.congratulate(guess, guesses_used)
         self.assertEqual(congratulation_message, gamehost.feedback)

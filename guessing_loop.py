@@ -52,7 +52,7 @@ class GuessingLoop():
             # Give feedback after each guess
             # Win
             if guess == secret:
-                gamehost.congratulate(guesses_used)
+                gamehost.congratulate(guess, guesses_used)
             # Miss
             elif guess != secret and guesses_remaining > 0:
                 if guesses_remaining == 2:
