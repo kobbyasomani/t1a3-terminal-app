@@ -31,7 +31,9 @@ class GuessingLoop():
         secret = self.get_secret(category)
 
         # present a clue to the user and take input
-        print(f"\nHere's your first clue: {self.get_clue(category, secret)}")
+        clue = self.get_clue(category, secret)
+        gamehost.give_clue(clue, self.guesses_remaining)
+
         # guess = input("")
 
         # update remaining and used guesses
