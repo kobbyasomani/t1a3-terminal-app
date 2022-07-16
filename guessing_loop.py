@@ -48,27 +48,26 @@ class GuessingLoop():
 
             # update remaining and used guesses
             guesses_remaining = self.use_guess()
+            guesses_used = self.guesses_used
 
             # Give feedback after each guess
-            # Win
+            # Win (end the loop if the guess matches the secret)
             if guess == secret:
                 gamehost.congratulate(guess, guesses_used)
-            # Miss
+            # Miss (give feedback and another clue)
             elif guess != secret and guesses_remaining > 0:
                 if guesses_remaining == 2:
                     difficulty = "medium"
                 elif guesses_remaining == 1:
                     difficulty = "easy"
                 gamehost.encourage(guess, "miss", guesses_remaining)
-            # Loss
+            # Loss (game ends if no guesses remining)
             else:
                 gamehost.encourage(guess, "loss", guesses_remaining)
 
-        # end the loop if the guess matches the secret
+        # Update overall user stats at the end of the guessing round
 
-        # update overall user stats at the end of the guessing round
-
-        # update menu at the end of the guessing round (show stats at the top)
+        # Update menu at the end of the guessing round (show stats at the top)
 
 
 guessing_loop = GuessingLoop()
