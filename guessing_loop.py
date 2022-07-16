@@ -31,12 +31,11 @@ class GuessingLoop():
         self.guesses_remaining -= 1
 
     def start(self, category=menu_categories.get_selection()):
-        # Initialise user guess variable as empty string
+        # Initialise user guess variable and select a random secret from category
         guess = ""
-
-        # Select a 'secret' at random from the chosen category
         secret = self.get_secret(category)
 
+        # Start guessing loop
         while guess != secret:
             # present a clue to the user and take input
             clue = self.get_clue(category, secret)
@@ -47,8 +46,11 @@ class GuessingLoop():
             self.use_guess()
 
             # give feedback after each guess
-            if guess.lower() == secret.lower():
+            if guess == secret:
                 gamehost.congratulate(self.guesses_used)
+            else:
+                gamehost.encourage()
+                gamehost.give_clue()
 
         # end the loop if the guess matches the secret
 

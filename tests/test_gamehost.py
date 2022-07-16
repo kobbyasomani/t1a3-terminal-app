@@ -13,9 +13,26 @@ class TestGameHost(unittest.TestCase):
     # Test get random message prefix
     def test_get_message_prefix(self):
         gamehost = GameHost()
-        self.assertTrue(gamehost.get_prefix())
+        guess_type = "win"
+        self.assertTrue(gamehost.get_prefix(guess_type))
+
+    # Test giving encouragement message after miss (incorrect guess)
+    def test_encourage_player_miss(self):
+        gamehost = GameHost()
+        guess_type = "miss"
+        guesses_remaining = 2
+        encouragement_message = gamehost.encourage(guess_type, guesses_remaining)
+        self.assertEqual(encouragement_message, gamehost.feedback)
+
+    # Test giving encouraging message after loss (incorrect final guess)
+    def test_encourage_player_loss(self):
+        gamehost = GameHost()
+        guess_type = "loss"
+        guesses_remaining = 0
+        encouragement_message = gamehost.encourage(guess_type, guesses_remaining)
+        self.assertEqual(encouragement_message, gamehost.feedback)
     
-    # Test generate congratulations message
+    # Test congratulating player after a win
     def test_congratulate_player(self):
         gamehost = GameHost()
         guesses_used = 1
