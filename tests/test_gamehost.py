@@ -7,8 +7,7 @@ class TestGameHost(unittest.TestCase):
         gamehost = GameHost()
         clue = "Your first clue"
         guesses_remaining = 3
-        gamehost.give_clue(clue, guesses_remaining)
-        self.assertTrue(clue in gamehost.feedback)
+        self.assertTrue(clue in gamehost.give_clue(clue, guesses_remaining))
 
     # Test get random message prefix
     def test_get_message_prefix(self):

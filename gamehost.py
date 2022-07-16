@@ -1,4 +1,3 @@
-from player import player1
 import random
 
 
@@ -10,10 +9,11 @@ class GameHost:
 
     def give_feedback(self):
         print(f"\n{self.feedback}")
+        self.feedback = ""
 
-    def welcome(self):
-        if player1.games_played == 0:
-            self.feedback = "\nWelcome to The Guessing Game!\nHave some fun and test your wits by guessing a secret number, word, or phrase within three guesses.\nPlease choose from one of the categories below by entering the name or number.\n"
+    def welcome(self, games_played: int):
+        if games_played == 0:
+            self.feedback = "Welcome to The Guessing Game!\nHave some fun and test your wits by guessing a secret number, word, or phrase within three guesses.\nPlease choose from one of the categories below by entering the name or number.\n"
         self.give_feedback()
 
     def give_clue(self, clue, guesses_remaining: int):
@@ -23,7 +23,9 @@ class GameHost:
             self.feedback = f"Ok, here's your next clue: {clue}"
         else:
             self.feedback = f"Good luck! Here's your final clue: {clue}"
+        clue_message = self.feedback
         self.give_feedback()
+        return clue_message
 
     def get_prefix(self, guess_type: str):
         response_prefixes = {

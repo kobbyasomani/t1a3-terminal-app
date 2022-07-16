@@ -20,22 +20,40 @@ class Player():
     def increment(self, attr: str):
         if attr != "avg_guesses_to_answer":
             try:
-                attribute = getattr(self, attr)
-                attribute += 1
-                return attribute
+                match attr:
+                    case "games_played":
+                        self.games_played += 1
+                    case "games_won":
+                        self.games_won += 1
+                    case "games_lost":
+                        self.games_lost += 1
+                    case "guesses_total":
+                        self.guesses_total += 1
+                    case _:
+                        return False
+                return True
             except AttributeError:
                 print(f"{attr} is not a Player attribute.")
         else:
             print("avg_guesses_to_answer cannot be incremented.")
 
-    def calc_avg_guesses(self, guesses_total=guesses_total, games_played=games_played):
+    def calc_avg_guesses(self):
         try:
-            self.avg_guesses_to_answer = guesses_total / games_played
+            self.avg_guesses_to_answer = self.guesses_total / self.games_played
             return self.avg_guesses_to_answer
         except ZeroDivisionError:
             print(
                 "Unable to calculate avg_guesses_to_answer. There are no games played yet.")
             return 0
+
+    def show_player_stats(self):
+        if self.games_played > 0:
+            player_stats = f"Games played: {self.games_played} | Won: {self.games_won} | Lost: {self.games_lost} | Avg. guesses to answer: {self.calc_avg_guesses()}"
+            print(f"Your stats: {player_stats}")
+            return player_stats
+        else:
+            #print(f"Your stats: No games played yet! Choose a category below.")
+            return False
 
 
 player1 = Player()
