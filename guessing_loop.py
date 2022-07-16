@@ -41,14 +41,14 @@ class GuessingLoop():
             # present a clue to the user and take input
             clue = self.get_clue(category, secret)
             gamehost.give_clue(clue, self.guesses_remaining)
-            guess = input("Enter you guess: ")
+            guess = input("Enter you guess: ").lower()
 
             # update remaining and used guesses
             self.use_guess()
 
-        # decrement remaining guesses if the guess does not match the secret
-
-        # give feedback after each guess
+            # give feedback after each guess
+            if guess.lower() == secret.lower():
+                gamehost.congratulate(self.guesses_used)
 
         # end the loop if the guess matches the secret
 

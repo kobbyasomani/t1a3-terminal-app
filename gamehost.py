@@ -1,4 +1,5 @@
 from player import player1
+import random
 
 
 class GameHost:
@@ -20,5 +21,23 @@ class GameHost:
             self.feedback = f"And we're off! Can you guess it in one go?\nHere's your first clue: {clue}"
             self.give_feedback()
 
+    def get_prefix(self):
+        response_prefixes = [
+            "Amazing!",
+            "Not bad at all!",
+            "Well done!",
+            "Not too shabby!"
+        ]
+        return random.choice(response_prefixes)
+    
+    def congratulate(self, guesses_used):
+        responses = [
+            "You figured it out in just one guess!",
+            "That second clue really clinched it for you!",
+            "You got there in the end!"
+        ]
+        self.feedback = f"{self.get_prefix()} {responses[guesses_used-1]}"
+        self.give_feedback()
+        return self.feedback
 
 gamehost = GameHost()
