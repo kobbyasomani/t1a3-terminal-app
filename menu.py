@@ -20,7 +20,7 @@ class Menu():
             print("There are no menu items available.")
 
     # Check if the user selection matches a menu item (by index number or value)
-    def has_option(self, user_selection):
+    def has_option(self, user_selection: str):
         if (user_selection):
             if user_selection.isnumeric() and int(user_selection) in range(1, self.get_length()+1):
                 return [True, self.menu_items[int(user_selection)-1]]
@@ -34,7 +34,7 @@ class Menu():
             return [False, user_selection]
 
     # If the user selection is valid, set their selection as the selected category
-    def set_selection(self, user_selection):
+    def set_selection(self, user_selection: str):
         chosen_option = self.has_option(user_selection)
         if chosen_option[0] == True:
             if user_selection.isnumeric():

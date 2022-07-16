@@ -17,7 +17,7 @@ class Player():
         except AttributeError:
             print(f"{attr} is not a Player attribute.")
 
-    def increment(self, attr):
+    def increment(self, attr: str):
         if attr != "avg_guesses_to_answer":
             try:
                 attribute = getattr(self, attr)

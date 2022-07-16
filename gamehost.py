@@ -16,7 +16,7 @@ class GameHost:
             self.feedback = "\nWelcome to The Guessing Game!\nHave some fun and test your wits by guessing a secret number, word, or phrase within three guesses.\nPlease choose from one of the categories below by entering the name or number.\n"
         self.give_feedback()
 
-    def give_clue(self, clue, guesses_remaining:int):
+    def give_clue(self, clue, guesses_remaining: int):
         if guesses_remaining == 3:
             self.feedback = f"And we're off! Can you guess it in one go?\nHere's your first clue: {clue}"
         elif guesses_remaining == 2:
@@ -25,7 +25,7 @@ class GameHost:
             self.feedback = f"Good luck! Here's your final clue: {clue}"
         self.give_feedback()
 
-    def get_prefix(self, guess_type):
+    def get_prefix(self, guess_type: str):
         response_prefixes = {
             "win": [
                 "Amazing!",
@@ -52,7 +52,7 @@ class GameHost:
         }
         return random.choice(response_prefixes[guess_type])
 
-    def encourage(self, guess:str, guess_type:str, guesses_remaining:int):
+    def encourage(self, guess: str, guess_type: str, guesses_remaining: int):
         guesses_remaining_text = ""
         if guesses_remaining > 1:
             guesses_remaining_text = f"You have {guesses_remaining} guesses remaining"
@@ -65,7 +65,7 @@ class GameHost:
         self.give_feedback()
         return self.feedback
 
-    def congratulate(self, guess:str, guesses_used:int):
+    def congratulate(self, guess: str, guesses_used: int):
         responses = [
             "You figured it out in just one guess!",
             "That second clue really clinched it for you!",
