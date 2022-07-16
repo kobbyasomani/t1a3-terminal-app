@@ -19,7 +19,9 @@ class GameHost:
     def give_clue(self, clue, guesses_remaining):
         if guesses_remaining == 3:
             self.feedback = f"And we're off! Can you guess it in one go?\nHere's your first clue: {clue}"
-            self.give_feedback()
+        elif guesses_remaining == 2:
+            self.feedback = f"Ok, here's your next clue: {clue}"
+        self.give_feedback()
 
     def get_prefix(self, guess_type):
         response_prefixes = {
@@ -34,25 +36,25 @@ class GameHost:
                 "That's not it... have another think about it.",
                 "Nope!",
                 "You could be close...",
-                "Hmm... maybe another clue will help.",
+                "No. Hmm... maybe another clue will help.",
                 "Sorry, that's a miss!",
                 "I'm afraid not..."
             ],
             "loss": [
                 "Sorry, you're out of guesses!",
                 "I'm afraid that's your last guess.",
-                "Oops, that's not it either!",
+                "Oops, that's your last try!",
                 "Three strikes and you're out!",
                 "Drat, another miss. Are these clues too difficult?"
             ]
         }
         return random.choice(response_prefixes[guess_type])
 
-    def encourage(self, guess_type=str, guesses_remaining=int):
+    def encourage(self, guess=str, guess_type=str, guesses_remaining=int):
         if guess_type == "miss":
-            self.feedback = f"{self.get_prefix('miss')}\nYou have {guesses_remaining} guesses left..."
+            self.feedback = f"{guess.title()} you say? {self.get_prefix('miss')}\nYou have {guesses_remaining} guesses remaining."
         elif guess_type == "loss":
-            self.feedback = f"{self.get_prefix('loss')}\nWould you like to play another round?"
+            self.feedback = f"It's not {guess.title()} either. {self.get_prefix('loss')}\nWould you like to play another round?"
         self.give_feedback()
         return self.feedback
 

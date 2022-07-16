@@ -59,10 +59,10 @@ class GuessingLoop():
                     difficulty = "medium"
                 elif guesses_remaining == 1:
                     difficulty = "easy"
-                gamehost.encourage("miss", guesses_remaining)
+                gamehost.encourage(guess, "miss", guesses_remaining)
             # Loss
             else:
-                gamehost.encourage("loss", guesses_remaining)
+                gamehost.encourage(guess, "loss", guesses_remaining)
 
         # end the loop if the guess matches the secret
 
