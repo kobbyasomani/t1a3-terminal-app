@@ -10,8 +10,8 @@ class GuessingLoop():
     """A class for selecting secrets and clues, and tracking the guessing loop state"""
     round_num = 1
     current_secret = ""
-    used_guesses = 0
-    remaining_guesses = 3
+    guesses_used = 0
+    guesses_remaining = 3
     is_running = False
 
     def get_secret(self, category=menu_categories.get_selection()):
