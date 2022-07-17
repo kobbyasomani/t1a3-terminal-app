@@ -40,7 +40,7 @@ class Player():
     def calc_avg_guesses(self):
         try:
             self.avg_guesses_to_answer = self.guesses_total / self.games_played
-            return self.avg_guesses_to_answer
+            return round(self.avg_guesses_to_answer, 2)
         except ZeroDivisionError:
             print(
                 "Unable to calculate avg_guesses_to_answer. There are no games played yet.")
