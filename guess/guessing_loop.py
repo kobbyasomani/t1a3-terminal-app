@@ -17,13 +17,16 @@ class GuessingLoop():
     guesses_remaining = 3
     is_running = False
 
+    def quit_game(self):
+        system("clear")
+        gamehost.goodbye(player1.get("games_played"))
+        if player1.get("games_played") > 0:
+            player1.show_player_stats()
+        sys.exit(0)
+
     def get_secret(self, category=menu_categories.get_selection()):
         if category == "quit":
-            system("clear")
-            gamehost.goodbye(player1.get("games_played"))
-            if player1.get("games_played") > 0:
-                player1.show_player_stats()
-            sys.exit(0)
+            self.quit_game()
         elif category == "numbers":
             secret = str(random.randint(1, 10))
             return secret
@@ -72,6 +75,8 @@ class GuessingLoop():
             clue = self.get_clue(guess, category, secret, difficulty)
             gamehost.give_clue(clue, guesses_remaining)
             guess = input("Enter you guess: ").lower()
+            if guess == "quit":
+                self.quit_game()
             while category != "numbers" and len(guess) < 3:
                 while guess.isnumeric():
                     guess = input(
@@ -110,11 +115,15 @@ class GuessingLoop():
             else:
                 gamehost.encourage(guess, "loss", guesses_remaining)
                 player1.increment("games_lost")
-                if gamehost.give_choice("Should I tell you the secret"):
+                reveal_secret = gamehost.give_choice("Should I tell you the secret")
+                if reveal_secret == True and reveal_secret != "quit":
                     print(
                         f"\nThe secret was {secret.title()}! do the clues make sense now?")
                 else:
-                    print("\nI'm sure you'll get it eventually!")
+                    if reveal_secret != "quit":
+                        print("\nI'm sure you'll get it eventually!")
+                    else:
+                        self.quit_game()
 
         # Update overall user stats at the end of the game
         player1.increment("games_played")

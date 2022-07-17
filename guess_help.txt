@@ -1,0 +1,29 @@
+Welcome to the Guessing Game!
+This terminal application, written in Python3, is a fun guessing game 
+where you have three tries to correctly guess a secret number, word,
+or phrase from a list of categories.
+
+Installation steps:
+- Download the ZIP file from the Guessing Game repository on GitHub at this address:
+https://github.com/kobbyasomani/t1a3-terminal-app/archive/refs/heads/main.zip
+- Unzip the file
+- Open your terminal or command prompt application
+- Navigate to the src directory in your terminal
+- Use the commands 'bash guess.sh' or './guess.sh' to run the guessing game
+- Have fun!
+
+Dependencies:
+- You will need to have Python3 installed on your machine.
+You can download it from the following address: https://www.python.org/downloads/
+
+System/Hardware requirements:
+- This application should be compatible with any machine that can run Python 3
+and has a terminal or command prompt application installed.
+
+Command line arguments:
+- Type 'bash guess help' into your terminal or command prompt and hit 'enter' or 'return' to open this help file in the terminal.
+
+About the Project:
+This project was completed by Kobby Asomani in July 2022
+as part of the Coder Academy Bootcamp Foundation Programming unit.
+See my other projects on GitHub: https://github.com/kobbyasomani

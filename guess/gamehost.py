@@ -105,14 +105,17 @@ class GameHost:
 
     def give_choice(self, prompt: str):
         options_yes = ["y", "yes", 1]
-        options_no = ["n", "no", 0]
+        options_no = ["n", "no", 0, "quit"]
         user_input = ""
         while user_input not in options_yes and user_input not in options_no:
             user_input = input(f"{prompt} (y/n)? ")
         if user_input in options_yes:
             return True
         if user_input in options_no:
-            return False
+            if user_input != "quit":
+                return False
+            else:
+                return "quit"
 
     def goodbye(self, games_played):
         goodbye_prefix_options = [

@@ -31,19 +31,45 @@ The user's score and stats are tracked and updated at the end of each round of t
 ## Implementation Plan
 This application was developed following an implementation plan tracked using Kanban-style project management software Trello.
 
-My implementation plan includes task cards assigned to a list of academic requirements, a to-do list of core coding tasks (broken down by feature), and a list of optional 'nice-to-have' features to be implemented if time permits.
+My implementation plan included task cards assigned to a list of academic requirements, a to-do list of core coding tasks (broken down by feature), and a list of optional 'nice-to-have' features to be implemented if time permitted.
 
-Task cards are moved from their respective lists to 'In Progress' and 'Done' as the project progresses.
+Task cards are moved from their respective lists to 'In Progress' and 'Done' as the project progresses.  
 [**View the Trello board for this project.**](https://trello.com/b/uixdH4cn)
 
+*My task lists on Trello at the start of the project:*
+
 ![My task lists on Trello at the start of coding.](./docs/kasomani_t1a3_trello-board_2048px.jpg)
+
+ I followed a Test-Driven Development (TDD) approach for this project, implementing a range of automated tests for each application feature using Python's built-in unittest module.
+
+*Python3 unittest tests and results for the core guessing loop of the game:*
+
+![Python unittest tests for the core guessing loop of the game.](./docs/guessing_loop_tests.png)
+
+![Python unittest tests for the core guessing loop of the game.](./docs/guessing_loop_test_results.png)
 
 
 ## Help Documentation
 ### Installation
+- [**Download the ZIP file**](https://github.com/kobbyasomani/t1a3-terminal-app/archive/refs/heads/main.zip) from this GitHub repository.
+- Unzip the file.
+- Open your terminal or command prompt application.
+- Navigate to the src directory in your terminal.
+- Use the commands 'bash guess.sh' or './guess.sh' in your terminal or command prompt to run the guessing game.
+- Have fun!
 
 ### Dependencies
+- You will need to have Python3 installed on your machine.  
+You can [**download Python3 here**](https://www.python.org/downloads/).
 
 ### System/Hardware Requirements
+- This application should be compatible with any machine that can run Python 3
+and has a terminal or command prompt application installed.
 
 ### Command Line Arguments
+- Type 'bash guess help' into your terminal or command prompt and hit 'enter' or 'return' to open the application help file.
+
+## References
+Python Software Foundation 2022, *random — Generate pseudo-random numbers — Python 3.10.5 documentation*, viewed 10 July 2022,  https://docs.python.org/3/library/random.html.
+
+Rossum, G van, Warsaw, B, & Coghlan, N 2022, *PEP 8 – Style Guide for Python Code* | peps.python.org, viewed 9 July 2022,  https://peps.python.org/pep-0008/.
