@@ -68,6 +68,26 @@ fairy = Secret(
     "mythical creatures"
 )
 
+mermaid = Secret(
+    "mermaid",
+    {
+        "easy": ["My siren song has been known to lure ships to wreck."],
+        "medium": ["My scales shimmer with iridescence."],
+        "hard": ["I don't need to hold my breath underwater."]
+    },
+    "mythical creatures"
+)
+
+phoenix = Secret(
+    "phoenix",
+    {
+        "easy": ["When I'm reborn, I spread my wings anew in fire."],
+        "medium": ["Glorious red is my plumage."],
+        "hard": ["My weeping may heal your wounds."]
+    },
+    "mythical creatures"
+)
+
 eiffel_tower = Secret(
     "eiffel tower",
     {
@@ -94,6 +114,26 @@ great_wall_of_china = Secret(
         "easy": ["My ancient stones stretch for miles and miles."],
         "medium": ["I've seen many battles between empires."],
         "hard": ["I'm the guardian of ancient states."]
+    },
+    "famous monuments"
+)
+
+statue_of_liberty = Secret(
+    "statue of liberty",
+    {
+        "easy": ["I'm a symbol of liberty in the United States."],
+        "medium": ["A fiery beacon is in my right hand."],
+        "hard": ["A teal crown is upon my might head."]
+    },
+    "famous monuments"
+)
+
+taj_mahal = Secret(
+    "taj mahal",
+    {
+        "easy": ["I'm the final resting place of an emperor's wife."],
+        "medium": ["My collosal white dome has many small friends."],
+        "hard": ["My ivory marble is reflected in water."]
     },
     "famous monuments"
 )

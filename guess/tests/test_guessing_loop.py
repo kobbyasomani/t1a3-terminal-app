@@ -25,6 +25,7 @@ class TestGuessingLoop(unittest.TestCase):
     def test_start_guessing_loop(self, mock_guess_input):
         guessing_loop = GuessingLoop()
         category = "mythical creatures"
-        mock_guess_input.side_effect = ["dog", "unicorn", "dragon"]
+        mock_guess_input.side_effect = [
+            "dog", "unicorn", "dragon", "yes", "no"]
         guessing_loop.start(category)
         self.assertNotEqual(guessing_loop.current_secret, "")

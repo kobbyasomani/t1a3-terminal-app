@@ -35,13 +35,15 @@ class TestMenu(unittest.TestCase):
     def test_set_selection(self):
         menu = Menu(["item1", "item2", "item3"])
         user_selection = "item1"
-        self.assertEqual(user_selection.lower(), menu.set_selection(user_selection).lower())
+        self.assertEqual(user_selection.lower(),
+                        menu.set_selection(user_selection).lower())
 
     # Test getting the currently selected category
     def test_get_selection(self):
         menu = Menu(["item1", "item2", "item3"])
         user_selection = "item1"
-        self.assertEqual(menu.set_selection(user_selection), menu.get_selection())
+        self.assertEqual(menu.set_selection(
+            user_selection), menu.get_selection())
 
 
 # Test printing method
