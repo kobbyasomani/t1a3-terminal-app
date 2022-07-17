@@ -2,6 +2,13 @@ import unittest
 from gamehost import GameHost
 
 class TestGameHost(unittest.TestCase):
+    # Test introduction to the chosen game category
+    def test_game_category_intro(self):
+        gamehost = GameHost()
+        category = "mythical creatures"
+        category_intro_message = gamehost.intro_category(category)
+        self.assertEqual(category_intro_message, gamehost.feedback)
+
     # Test give first clue
     def test_give_first_clue(self):
         gamehost = GameHost()

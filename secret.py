@@ -49,7 +49,7 @@ dragon = Secret(
     "dragon",
     {
         "easy": ["I breathe scorching fire."],
-        "medium": ["I have scales like a serpent, hard as rock"],
+        "medium": ["I have scales like a serpent, hard as rock."],
         "hard": ["I am very long-lived."]
     },
     "mythical creatures"

@@ -60,7 +60,7 @@ class Menu():
     # Prompt the user for menu item selection
     def prompt_for_selection(self):
         user_selection = input("\nSelect a category from the menu: ")
-        self.set_selection(user_selection)
+        return self.set_selection(user_selection)
 
 
 menu_categories = Menu([

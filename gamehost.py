@@ -14,7 +14,26 @@ class GameHost:
     def welcome(self, games_played: int):
         if games_played == 0:
             self.feedback = "Welcome to The Guessing Game!\nHave some fun and test your wits by guessing a secret number, word, or phrase within three guesses.\nPlease choose from one of the categories below by entering the name or number.\n"
+        elif games_played == 1:
+            self.feedback = "You decided to play another round!\nWhich category will you choose this time?"
+        elif games_played <= 9:
+            self.feedback = "Glad to see you're enjoying yourself!\nWhich category will you play next?"
+        else:
+            self.feedback = "Wow, you're a guessing machine! Shouldn't you take a break at some point?"
         self.give_feedback()
+
+    def intro_category(self, category: str):
+        if category:
+            match category:
+                case "numbers":
+                    self.feedback = "In this game you'll need to guess a a secret number between one and 10 within three guesses!\nI'll give you some clues about whether the number is higher or lower as you play."
+                case "mythical creatures":
+                    self.feedback = "In this game you'll have three guesses to guess the mythical creature I'm thinking of!\nI'll give you clues about the creature to help."
+                case "famous monuments":
+                    self.feedback = "In this game you'll have to guess the famous monument I'm thinking of from the clues.\nYou'll have three guesses to get it right!"
+            intro_message = self.feedback
+            print(self.feedback)
+            return intro_message
 
     def give_clue(self, clue, guesses_remaining: int):
         if guesses_remaining == 3:
