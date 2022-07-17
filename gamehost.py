@@ -96,5 +96,16 @@ class GameHost:
         self.give_feedback()
         return self.feedback
 
+    def give_choice(self, prompt: str):
+        options_yes = ["y", "yes", 1]
+        options_no = ["n", "no", 0]
+        user_input = ""
+        while user_input not in options_yes and user_input not in options_no:
+            user_input = input(prompt)
+        if user_input in options_yes:
+            return True
+        if user_input in options_no:
+            return False
+
 
 gamehost = GameHost()
