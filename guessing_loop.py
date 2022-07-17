@@ -75,11 +75,19 @@ class GuessingLoop():
             while category != "numbers" and len(guess) < 3:
                 while guess.isnumeric():
                     guess = input(
-                        f"\nThe category is {category.title()} not Numbers!\nEnter another guess: ").lower()
+                        f"\nThe game category is {category.title()} not Numbers!\nEnter another guess: ").lower()
                 while len(guess) < 3:
                     guess = input(
                         f"\nYou'll need to enter at least 3 letters...\nEnter a proper guess:  ").lower()
-
+            while category == "numbers" and not guess.isnumeric():
+                guess = input(
+                    f"\nEnter a number between 1 and 10 as your guess: ").lower()
+            while category == "numbers" and int(guess) > 10:
+                guess = input(
+                    f"\nEnter a number between 1 and 10 as your guess: ").lower()
+            while category == "numbers" and int(guess) < 1:
+                guess = input(
+                    f"\nEnter a number between 1 and 10 as your guess: ").lower()
             # update remaining and used guesses and round number
             guesses_remaining = self.use_guess()
             guesses_used = self.guesses_used
