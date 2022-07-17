@@ -81,18 +81,15 @@ class GuessingLoop():
                 while guess.isnumeric():
                     guess = input(
                         f"\nThe game category is {category.title()} not Numbers!\nEnter another guess: ").lower()
-                while len(guess) < 3:
+                while len(guess) < 3 and not guess.isnumeric():
                     guess = input(
                         f"\nYou'll need to enter at least 3 letters...\nEnter a proper guess:  ").lower()
             while category == "numbers" and not guess.isnumeric():
                 guess = input(
                     f"\nEnter a number between 1 and 10 as your guess: ").lower()
-            while category == "numbers" and int(guess) > 10:
+            while category == "numbers" and int(guess) not in range(1, 11):
                 guess = input(
-                    f"\nEnter a number between 1 and 10 as your guess: ").lower()
-            while category == "numbers" and int(guess) < 1:
-                guess = input(
-                    f"\nEnter a number between 1 and 10 as your guess: ").lower()
+                    f"\nThat number's not in the right range!\nEnter a number between 1 and 10 as your guess: ").lower()
             # update remaining and used guesses and round number
             guesses_remaining = self.use_guess()
             guesses_used = self.guesses_used
@@ -115,7 +112,8 @@ class GuessingLoop():
             else:
                 gamehost.encourage(guess, "loss", guesses_remaining)
                 player1.increment("games_lost")
-                reveal_secret = gamehost.give_choice("Should I tell you the secret")
+                reveal_secret = gamehost.give_choice(
+                    "Should I tell you the secret")
                 if reveal_secret == True and reveal_secret != "quit":
                     print(
                         f"\nThe secret was {secret.title()}! do the clues make sense now?")

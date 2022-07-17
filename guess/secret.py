@@ -78,8 +78,8 @@ eiffel_tower = Secret(
     "famous monuments"
 )
 
-pyramid_of_giza = Secret(
-    "pryamid of giza",
+the_great_pyramid_of_giza = Secret(
+    "the great pyramid of giza",
     {
         "easy": ["I'm the tomb of an ancient Pharaoh."],
         "medium": ["I have a very broad base and a very narrow top."],
@@ -88,8 +88,8 @@ pyramid_of_giza = Secret(
     "famous monuments"
 )
 
-great_wall_of_china = Secret(
-    "great wall of china",
+the_great_wall_of_china = Secret(
+    "the great wall of china",
     {
         "easy": ["My ancient stones stretch for miles and miles."],
         "medium": ["I've seen many battles between empires."],
