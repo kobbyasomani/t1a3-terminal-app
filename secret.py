@@ -4,6 +4,7 @@ import random
 
 dict_secrets = {}
 
+
 @dataclass
 class Secret():
     """A class for storing answers (words and phrases) and corresponding clues"""
@@ -35,8 +36,6 @@ class Secret():
 
     def get_clue(self, difficulty="hard"):
         return random.choice(self.clues[difficulty])
-
-    # def add_to_secrets_list(self):
 
 
 unicorn = Secret(

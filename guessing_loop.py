@@ -17,7 +17,7 @@ class GuessingLoop():
 
     def get_secret(self, category=menu_categories.get_selection()):
         if category == "numbers":
-            secret = random.randint(1,10)
+            secret = str(random.randint(1, 10))
             return secret
         else:
             keys = []
@@ -27,8 +27,22 @@ class GuessingLoop():
             self.current_secret = secret
             return secret
 
-    def get_clue(self, category=menu_categories.get_selection(), secret=current_secret, difficulty="hard"):
-        clue = dict_secrets[category][secret].get_clue(difficulty)
+    def get_clue(self, guess: str, category=menu_categories.get_selection(), secret=current_secret, difficulty="hard"):
+        if category == "numbers":
+            if guess:
+                if int(guess) > int(secret):
+                    higher_or_lower = "less"
+                else:
+                    higher_or_lower = "greater"
+                clue = f"The secret number is {higher_or_lower} than {guess}."
+            else:
+                if int(secret) <= 5:
+                    clue = f"The secret number is less than {random.randint(int(secret)+1, 10)}."
+                else:
+                    clue = f"The secret number is greater than {random.randint(1, int(secret)-1)}."
+            return clue
+        else:
+            clue = dict_secrets[category][secret].get_clue(difficulty)
         return clue
 
     def use_guess(self):
@@ -47,7 +61,7 @@ class GuessingLoop():
         # Start guessing loop
         while guess != secret and guesses_remaining > 0:
             # present a clue to the user and take input
-            clue = self.get_clue(category, secret, difficulty)
+            clue = self.get_clue(guess, category, secret, difficulty)
             gamehost.give_clue(clue, guesses_remaining)
             guess = input("Enter you guess: ").lower()
 
@@ -74,7 +88,8 @@ class GuessingLoop():
                 gamehost.encourage(guess, "loss", guesses_remaining)
                 player1.increment("games_lost")
                 if gamehost.give_choice("Should I tell you the secret"):
-                    print(f"\nThe secret was {secret.title()}! do the clues make sense now?")
+                    print(
+                        f"\nThe secret was {secret.title()}! do the clues make sense now?")
                 else:
                     print("\nI'm sure you'll get it eventually!")
 

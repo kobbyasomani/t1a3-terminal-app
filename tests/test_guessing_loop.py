@@ -11,10 +11,11 @@ class TestGuessingLoop(unittest.TestCase):
 
     def test_select_random_clue(self):
         guessing_loop = GuessingLoop()
+        guess = ""
         category = "mythical creatures"
         secret = "unicorn"
         difficulty = "hard"
-        self.assertTrue(guessing_loop.get_clue(category, secret, difficulty))
+        self.assertTrue(guessing_loop.get_clue(guess, category, secret, difficulty))
 
     # Test that the loop starts and assigns a random secret to the current_secret attribute
     @mock.patch("guessing_loop.input", create=True)
