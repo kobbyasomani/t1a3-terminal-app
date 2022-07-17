@@ -82,7 +82,7 @@ class GameHost:
         if guess_type == "miss":
             self.feedback = f"{guess.title()} you say? {self.get_prefix('miss')}\n{guesses_remaining_text}."
         elif guess_type == "loss":
-            self.feedback = f"It's not {guess.title()} either. {self.get_prefix('loss')}\nWould you like to play another round?"
+            self.feedback = f"It's not {guess.title()} either. {self.get_prefix('loss')}"
         self.give_feedback()
         return self.feedback
 
