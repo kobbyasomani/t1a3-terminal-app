@@ -33,7 +33,7 @@ class GameHost:
         if category:
             match category:
                 case "numbers":
-                    self.feedback = "In this game you'll need to guess a secret number between 1 and 10 (inclusive) in three guesses!\nI'll give you some clues about whether the number is higher or lower as you play."
+                    self.feedback = "In this game you'll need to guess a secret number between 1 and 10 (inclusive) in three guesses!\nI'll give you some clues about whether the number is higher or lower as you play\nThe number is an integer (whole number)."
                 case "mythical creatures":
                     self.feedback = "In this game you'll have three guesses to guess the mythical creature I'm thinking of!\nI'll give you clues about the creature to help.\nThe answer will be a single word."
                 case "famous monuments":
@@ -76,6 +76,14 @@ class GameHost:
                 "Oops, that's your last try!",
                 "Three strikes and you're out!",
                 "Drat, another miss! Are these clues too difficult?"
+            ],
+            "partial": [
+                "You're SO CLOSE to the answer!",
+                "Wow, it's right on the tip of your tongue!",
+                "You're on the right track, keep going!",
+                "So close, you can almost TASTE the secret!",
+                "Yeah, yeah, you're almost there!",
+                "One more nudge should do it!"
             ]
         }
         return random.choice(response_prefixes[guess_type])
@@ -86,6 +94,8 @@ class GameHost:
             guesses_remaining_text = f"You have {guesses_remaining} guesses remaining"
         else:
             guesses_remaining_text = f"You have {guesses_remaining} guess remaining"
+        if guess_type == "partial":
+            self.feedback = f"{guess.title()}? {self.get_prefix('partial')}\n{guesses_remaining_text}"
         if guess_type == "miss":
             self.feedback = f"{guess.title()} you say? {self.get_prefix('miss')}\n{guesses_remaining_text}."
         elif guess_type == "loss":

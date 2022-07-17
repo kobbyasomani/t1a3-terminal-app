@@ -72,14 +72,14 @@ eiffel_tower = Secret(
     "eiffel tower",
     {
         "easy": ["I make my home in 'the city of love'."],
-        "medium": ["I have an ornate, wrought-iron lattice"],
+        "medium": ["I have an ornate, wrought-iron lattice."],
         "hard": ["I'm 300 metres tall."]
     },
     "famous monuments"
 )
 
-the_great_pyramid_of_giza = Secret(
-    "the great pyramid of giza",
+great_pyramid_of_giza = Secret(
+    "great pyramid of giza",
     {
         "easy": ["I'm the tomb of an ancient Pharaoh."],
         "medium": ["I have a very broad base and a very narrow top."],
@@ -88,12 +88,12 @@ the_great_pyramid_of_giza = Secret(
     "famous monuments"
 )
 
-the_great_wall_of_china = Secret(
-    "the great wall of china",
+great_wall_of_china = Secret(
+    "great wall of china",
     {
         "easy": ["My ancient stones stretch for miles and miles."],
         "medium": ["I've seen many battles between empires."],
-        "hard": ["I'm the guardian of ancient states"]
+        "hard": ["I'm the guardian of ancient states."]
     },
     "famous monuments"
 )

@@ -1,3 +1,4 @@
+from difflib import SequenceMatcher
 from os import system
 import sys
 from dataclasses import dataclass
@@ -86,7 +87,7 @@ class GuessingLoop():
                         f"\nYou'll need to enter at least 3 letters...\nEnter a proper guess:  ").lower()
             while category == "numbers" and not guess.isnumeric():
                 guess = input(
-                    f"\nEnter a number between 1 and 10 as your guess: ").lower()
+                    f"\nYou're trying to guess a positive integer, remember?\nEnter a number between 1 and 10 as your guess: ").lower()
             while category == "numbers" and int(guess) not in range(1, 11):
                 guess = input(
                     f"\nThat number's not in the right range!\nEnter a number between 1 and 10 as your guess: ").lower()
@@ -107,7 +108,12 @@ class GuessingLoop():
                     difficulty = "medium"
                 elif guesses_remaining == 1:
                     difficulty = "easy"
-                gamehost.encourage(guess, "miss", guesses_remaining)
+                match = SequenceMatcher(
+                    lambda x: x == " ", guess, secret).ratio()
+                if match > 0.6 or guess in secret:
+                    gamehost.encourage(guess, "partial", guesses_remaining)
+                else:
+                    gamehost.encourage(guess, "miss", guesses_remaining)
             # Loss (game ends if no guesses remining)
             else:
                 gamehost.encourage(guess, "loss", guesses_remaining)
