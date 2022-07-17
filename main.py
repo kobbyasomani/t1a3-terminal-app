@@ -13,7 +13,7 @@ def main():
         menu_categories.print_menu()
         gamehost.intro_category(menu_categories.prompt_for_selection())
         guessing_loop.start(menu_categories.get_selection())
-        if gamehost.give_choice("Would you like to play another game (y/n)? "):
+        if gamehost.give_choice("Would you like to play another game"):
             menu_categories.selected_category = ""
         else:
             print("\nThanks for playing! Here's how you did:")

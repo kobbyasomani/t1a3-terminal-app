@@ -69,6 +69,10 @@ class GuessingLoop():
             else:
                 gamehost.encourage(guess, "loss", guesses_remaining)
                 player1.increment("games_lost")
+                if gamehost.give_choice("Should I tell you the secret"):
+                    print(f"\nThe secret was {secret.title()}! do the clues make sense now?")
+                else:
+                    print("\nI'm sure you'll get it eventually!")
 
         # Update overall user stats at the end of the game
         player1.increment("games_played")
