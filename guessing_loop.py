@@ -1,3 +1,5 @@
+from os import system
+import sys
 from dataclasses import dataclass
 from menu import menu_categories
 from secret import dict_secrets
@@ -16,7 +18,12 @@ class GuessingLoop():
     is_running = False
 
     def get_secret(self, category=menu_categories.get_selection()):
-        if category == "numbers":
+        if category == "quit":
+            gamehost.goodbye(player1.get("games_played"))
+            if player1.get("games_played") > 0:
+                player1.show_player_stats()
+            sys.exit(0)
+        elif category == "numbers":
             secret = str(random.randint(1, 10))
             return secret
         else:

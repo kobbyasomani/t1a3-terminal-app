@@ -30,7 +30,7 @@ class Menu():
                 return [True, user_selection]
             else:
                 for item in self.menu_items:
-                    if user_selection.lower() in item:
+                    if len(user_selection) > 4 and user_selection.lower() in item:
                         return [True, item]
         else:
             return [False, user_selection]
@@ -39,23 +39,25 @@ class Menu():
     def set_selection(self, user_selection: str):
         chosen_option = self.has_option(user_selection)
         if chosen_option[0] == True:
+            if chosen_option[1] != "quit":
+                system("clear")
             if user_selection.isnumeric():
                 self.selected_category = self.menu_items[int(user_selection)-1]
-                system("clear")
                 print(
-                    f"You have selected the category: {self.selected_category.title()}!")
+                    f"You have selected the category: {self.selected_category.title()}.")
                 return self.selected_category
             else:
                 self.selected_category = chosen_option[1]
-                system("clear")
                 print(
-                    f"You have selected the category: {self.selected_category.title()}!")
+                    f"You have selected the category: {self.selected_category.title()}.")
                 return self.selected_category
         elif user_selection == "":
             print(f"It looks like you didn't enter anything...")
+            return self.prompt_for_selection()
         else:
             print(
                 f"I'm sorry, '{user_selection}' is not one of the available options.")
+            return self.prompt_for_selection()
 
     # Get the selected menu item (category)
     def get_selection(self):

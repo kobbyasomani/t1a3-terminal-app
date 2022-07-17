@@ -19,7 +19,7 @@ def main():
             system("clear")
         else:
             system("clear")
-            gamehost.goodbye()
+            gamehost.goodbye(player1.get("games_played"))
             player1.show_player_stats()
             sys.exit(0)
 
