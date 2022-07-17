@@ -16,7 +16,7 @@ def main():
         if gamehost.give_choice("Would you like to play another game"):
             menu_categories.selected_category = ""
         else:
-            print("\nThanks for playing! Here's how you did:")
+            gamehost.goodbye()
             player1.show_player_stats()
             sys.exit(0)
 

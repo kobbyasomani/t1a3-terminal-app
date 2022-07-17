@@ -101,11 +101,23 @@ class GameHost:
         options_no = ["n", "no", 0]
         user_input = ""
         while user_input not in options_yes and user_input not in options_no:
-            user_input = input(f"{prompt} (y/n)")
+            user_input = input(f"{prompt} (y/n)? ")
         if user_input in options_yes:
             return True
         if user_input in options_no:
             return False
+
+    def goodbye(self):
+        goodbye_prefix = [
+            "Thanks for playing!",
+            "Sorry to see you go!",
+            "Play again soon!",
+            "Adiós, amgio!",
+            "It's been real!",
+            "I hope you had fun!"
+        ]
+        self.feedback = f"{random.choice(goodbye_prefix)} Here's how you did:"
+        self.give_feedback()
 
 
 gamehost = GameHost()
