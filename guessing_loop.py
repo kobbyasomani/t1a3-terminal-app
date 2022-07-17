@@ -19,6 +19,7 @@ class GuessingLoop():
 
     def get_secret(self, category=menu_categories.get_selection()):
         if category == "quit":
+            system("clear")
             gamehost.goodbye(player1.get("games_played"))
             if player1.get("games_played") > 0:
                 player1.show_player_stats()
@@ -71,6 +72,13 @@ class GuessingLoop():
             clue = self.get_clue(guess, category, secret, difficulty)
             gamehost.give_clue(clue, guesses_remaining)
             guess = input("Enter you guess: ").lower()
+            while category != "numbers" and len(guess) < 3:
+                while guess.isnumeric():
+                    guess = input(
+                        f"\nThe category is {category.title()} not Numbers!\nEnter another guess: ").lower()
+                while len(guess) < 3:
+                    guess = input(
+                        f"\nYou'll need to enter at least 3 letters...\nEnter a proper guess:  ").lower()
 
             # update remaining and used guesses and round number
             guesses_remaining = self.use_guess()

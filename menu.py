@@ -30,7 +30,7 @@ class Menu():
                 return [True, user_selection]
             else:
                 for item in self.menu_items:
-                    if len(user_selection) > 4 and user_selection.lower() in item:
+                    if len(user_selection) >= 4 and user_selection.lower() in item:
                         return [True, item]
         else:
             return [False, user_selection]
