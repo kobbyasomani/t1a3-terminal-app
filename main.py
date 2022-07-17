@@ -1,4 +1,5 @@
 import sys
+from os import system
 from menu import menu_categories
 from gamehost import gamehost
 from player import player1
@@ -15,7 +16,9 @@ def main():
         guessing_loop.start(menu_categories.get_selection())
         if gamehost.give_choice("Would you like to play another game"):
             menu_categories.selected_category = ""
+            system("clear")
         else:
+            system("clear")
             gamehost.goodbye()
             player1.show_player_stats()
             sys.exit(0)

@@ -15,11 +15,18 @@ class GameHost:
         if games_played == 0:
             self.feedback = "Welcome to The Guessing Game!\nHave some fun and test your wits by guessing a secret number, word, or phrase within three guesses.\nPlease choose from one of the categories below by entering the name or number.\n"
         elif games_played == 1:
-            self.feedback = "You decided to play another round!\nWhich category will you choose this time?"
+            self.feedback = "You decided to play another round!\nWhich category will you choose this time?\n"
         elif games_played <= 9:
-            self.feedback = "Glad to see you're enjoying yourself!\nWhich category will you play next?"
+            welcome_prefix = [
+                "Glad to see you're still enjoying yourself!",
+                "May as well play another round, eh?",
+                "Good stuff! Let's keep guessing...",
+                "Another day, another guessing game",
+                "Right, lets dive into another category!"
+            ]
+            self.feedback = f"{random.choice(welcome_prefix)}\nWhich category will you play next?\n"
         else:
-            self.feedback = "Wow, you're a guessing machine! Shouldn't you take a break at some point?"
+            self.feedback = "Wow, you're a guessing machine! Shouldn't you take a break at some point?\n"
         self.give_feedback()
 
     def intro_category(self, category: str):

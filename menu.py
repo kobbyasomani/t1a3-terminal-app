@@ -1,3 +1,4 @@
+from os import system
 from dataclasses import dataclass
 
 
@@ -39,11 +40,13 @@ class Menu():
         if chosen_option[0] == True:
             if user_selection.isnumeric():
                 self.selected_category = self.menu_items[int(user_selection)-1]
+                system("clear")
                 print(
                     f"You have selected the category: {self.selected_category.title()}!")
                 return self.selected_category
             else:
                 self.selected_category = chosen_option[1]
+                system("clear")
                 print(
                     f"You have selected the category: {self.selected_category.title()}!")
                 return self.selected_category
