@@ -1,5 +1,6 @@
 from os import system
 from dataclasses import dataclass
+from secret import dict_secrets
 
 
 @dataclass
@@ -65,9 +66,20 @@ class Menu():
         user_selection = input("\nSelect a category from the menu: ")
         return self.set_selection(user_selection)
 
+    # Populate the menu with options using keys from a dictionary
+    def populate_menu(self, dictionary: dict):
+        for key, value in dictionary.items():
+            self.menu_items.append(key)
+            return self.menu_items
 
-menu_categories = Menu([
-    "numbers",
-    "mythical creatures",
-    "famous monuments"
-])
+
+menu_categories = Menu([])
+menu_categories.menu_items.append("numbers")
+menu_categories.populate_menu(dict_secrets)
+menu_categories.menu_items.append("quit")
+
+# menu_categories = Menu([
+#     "numbers",
+#     "mythical creatures",
+#     "famous monuments"
+# ])
