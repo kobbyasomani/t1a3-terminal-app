@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from menu import menu_categories
-from secret import list_secrets
+from secret import dict_secrets
 from gamehost import gamehost
 from player import player1
 import random
@@ -16,15 +16,19 @@ class GuessingLoop():
     is_running = False
 
     def get_secret(self, category=menu_categories.get_selection()):
-        keys = []
-        for key, secret in list_secrets[category].items():
-            keys.append(key)
-        secret = random.choice(keys)
-        self.current_secret = secret
-        return secret
+        if category == "numbers":
+            secret = random.randint(1,10)
+            return secret
+        else:
+            keys = []
+            for key, secret in dict_secrets[category].items():
+                keys.append(key)
+            secret = random.choice(keys)
+            self.current_secret = secret
+            return secret
 
     def get_clue(self, category=menu_categories.get_selection(), secret=current_secret, difficulty="hard"):
-        clue = list_secrets[category][secret].get_clue(difficulty)
+        clue = dict_secrets[category][secret].get_clue(difficulty)
         return clue
 
     def use_guess(self):

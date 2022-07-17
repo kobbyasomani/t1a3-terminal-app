@@ -26,7 +26,7 @@ class GameHost:
         if category:
             match category:
                 case "numbers":
-                    self.feedback = "In this game you'll need to guess a a secret number between one and 10 within three guesses!\nI'll give you some clues about whether the number is higher or lower as you play."
+                    self.feedback = "In this game you'll need to guess a secret number between 1 and 10 (inclusive) in three guesses!\nI'll give you some clues about whether the number is higher or lower as you play."
                 case "mythical creatures":
                     self.feedback = "In this game you'll have three guesses to guess the mythical creature I'm thinking of!\nI'll give you clues about the creature to help."
                 case "famous monuments":

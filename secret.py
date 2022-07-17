@@ -2,6 +2,8 @@ from dataclasses import dataclass
 import random
 
 
+dict_secrets = {}
+
 @dataclass
 class Secret():
     """A class for storing answers (words and phrases) and corresponding clues"""
@@ -12,6 +14,13 @@ class Secret():
         "hard": []
     ]
     category: str
+
+    def __post_init__(self):
+        if self.category in dict_secrets:
+            dict_secrets[self.category][self.answer] = self
+        else:
+            dict_secrets[self.category] = dict()
+            dict_secrets[self.category][self.answer] = self
 
     def get_answer(self):
         return self.answer
@@ -27,12 +36,7 @@ class Secret():
     def get_clue(self, difficulty="hard"):
         return random.choice(self.clues[difficulty])
 
-    def add_to_secrets_list(self):
-        if self.category in list_secrets:
-            list_secrets[self.category].append(self)
-        else:
-            list_secrets[self.category] = self.category
-            list_secrets[self.category].append(self)
+    # def add_to_secrets_list(self):
 
 
 unicorn = Secret(
@@ -54,13 +58,3 @@ dragon = Secret(
     },
     "mythical creatures"
 )
-
-list_secrets = {
-    "mythical creatures": {
-        "unicorn": unicorn,
-        "dragon": dragon
-    }
-}
-
-
-# unicorn.add_to_secrets_list()
