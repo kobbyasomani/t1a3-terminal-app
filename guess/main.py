@@ -14,8 +14,9 @@ def main():
         menu_categories.print_menu()
         gamehost.intro_category(menu_categories.prompt_for_selection())
         guessing_loop.start(menu_categories.get_selection())
-        keep_playing = gamehost.give_choice("Would you like to play another game")
-        if  keep_playing == True and keep_playing != "quit":
+        keep_playing = gamehost.give_choice(
+            "Would you like to play another game")
+        if keep_playing == True and keep_playing != "quit":
             menu_categories.selected_category = ""
             system("clear")
         else:

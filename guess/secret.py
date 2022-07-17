@@ -57,3 +57,43 @@ dragon = Secret(
     },
     "mythical creatures"
 )
+
+fairy = Secret(
+    "fairy",
+    {
+        "easy": ["Tinkerbell is one of my sisters."],
+        "medium": ["I like playing in gardens among the flowers."],
+        "hard": ["I have gossamer wings."]
+    },
+    "mythical creatures"
+)
+
+eiffel_tower = Secret(
+    "eiffel tower",
+    {
+        "easy": ["I make my home in 'the city of love'."],
+        "medium": ["I have an ornate, wrought-iron lattice"],
+        "hard": ["I'm 300 metres tall."]
+    },
+    "famous monuments"
+)
+
+pyramid_of_giza = Secret(
+    "pryamid of giza",
+    {
+        "easy": ["I'm the tomb of an ancient Pharaoh."],
+        "medium": ["I have a very broad base and a very narrow top."],
+        "hard": ["I'm surrounded by ever-shifting sands."]
+    },
+    "famous monuments"
+)
+
+great_wall_of_china = Secret(
+    "great wall of china",
+    {
+        "easy": ["My ancient stones stretch for miles and miles."],
+        "medium": ["I've seen many battles between empires."],
+        "hard": ["I'm the guardian of ancient states"]
+    },
+    "famous monuments"
+)

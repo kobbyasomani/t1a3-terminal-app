@@ -72,4 +72,6 @@ and has a terminal or command prompt application installed.
 ## References
 Python Software Foundation 2022, *random — Generate pseudo-random numbers — Python 3.10.5 documentation*, viewed 10 July 2022,  https://docs.python.org/3/library/random.html.
 
+Python Software Foundation 2022, *unittest — Unit testing framework — Python 3.10.5 documentation*, viewed 13 July 2022,  https://docs.python.org/3/library/unittest.html.
+
 Rossum, G van, Warsaw, B, & Coghlan, N 2022, *PEP 8 – Style Guide for Python Code* | peps.python.org, viewed 9 July 2022,  https://peps.python.org/pep-0008/.
