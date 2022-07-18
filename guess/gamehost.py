@@ -150,8 +150,8 @@ class GameHost:
 
     def give_choice(self, prompt: str):
         """Give a yes/no input choice and return 'True' 'False' or 'quit'."""
-        options_yes = ["y", "yes", 1]
-        options_no = ["n", "no", 0, "quit"]
+        options_yes = ["y", "yes", "1"]
+        options_no = ["n", "no", "0", "quit"]
         user_input = ""
         while user_input not in options_yes and user_input not in options_no:
             user_input = input(f"{prompt} (y/n)? ")

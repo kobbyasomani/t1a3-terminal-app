@@ -1,4 +1,4 @@
-Welcome to the Guessing Game!
+Welcome to The Guessing Game!
 This terminal application, written in Python3, is a fun guessing game 
 where you have three tries to correctly guess a secret number, word,
 or phrase from a list of categories.
@@ -27,6 +27,7 @@ How to play:
 - Select a category from the list of categories by typing its name or number
 and pressing 'return'.
 - Follow the prompts from the friendly game host to try and guess the secret word!
+- You can type 'yes', 'y', or '1', or 'no', 'n', or '0' as responses to yes/no prompts.
 - View your stats at the top of the terminal after every game round.
 - Type 'quit' and hit 'return' during any prompt to end the game and see your stats.
 
