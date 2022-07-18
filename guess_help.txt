@@ -8,7 +8,7 @@ Installation steps:
 https://github.com/kobbyasomani/t1a3-terminal-app/archive/refs/heads/main.zip
 - Unzip the file
 - Open your terminal or command prompt application
-- Navigate to the src directory in your terminal
+- Navigate to the 't1a3-terminal-app-main' directory in your terminal.
 - Use the commands 'bash guess.sh' or './guess.sh' to run the guessing game
 - Have fun!
 

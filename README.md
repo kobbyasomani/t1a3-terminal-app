@@ -77,7 +77,7 @@ Task cards are moved from their respective lists to 'In Progress' and 'Done' as 
 
 ![My task lists on Trello at the start of coding.](./docs/kasomani_t1a3_trello-board_2048px.jpg)
 
- I followed a Test-Driven Development (TDD) approach for this project, implementing a range of automated tests for each application feature using Python's built-in unittest module (Python Software Foundation 2022c). I also made use of the random and difflib modules (Python Software Foundation 2022b, c) from the Python Standard Library to achieve random selection of secret words, clues, and game messages, and to attempt partial matching of user guesses to secrets.
+ I followed a Test-Driven Development (TDD) approach for this project, implementing a range of automated tests for each application feature using Python's built-in unittest module (Python Software Foundation 2022c). I also made use of the difflib and random modules (Python Software Foundation 2022a, 2022b) from the Python Standard Library to achieve random selection of secret words, clues, and game messages, and to attempt partial matching of user guesses to secrets.
 
 *Python 3 unittest tests and results for the core guessing loop of the game:*
 
@@ -91,7 +91,7 @@ Task cards are moved from their respective lists to 'In Progress' and 'Done' as 
 - [**Download the ZIP file**](https://github.com/kobbyasomani/t1a3-terminal-app/archive/refs/heads/main.zip) from this GitHub repository.
 - Unzip the file.
 - Open your terminal or command prompt application.
-- Navigate to the src directory in your terminal.
+- Navigate to the 't1a3-terminal-app-main' directory in your terminal.
 - Use the commands 'bash guess.sh' or './guess.sh' in your terminal or command prompt to run the guessing game.
 - Have fun!
 
