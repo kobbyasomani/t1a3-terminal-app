@@ -7,7 +7,8 @@ dict_secrets = {}
 
 @dataclass
 class Secret():
-    """A class for storing answers (words and phrases) and corresponding clues"""
+    """A class for storing answers (words and phrases) 
+    and corresponding clues"""
     answer: str
     clues: dict[
         "easy": [],
@@ -101,7 +102,7 @@ eiffel_tower = Secret(
 great_pyramid_of_giza = Secret(
     "great pyramid of giza",
     {
-        "easy": ["I'm the tomb of an ancient Pharaoh."],
+        "easy": ["I'm the 'great' tomb of an ancient Pharaoh."],
         "medium": ["I have a very broad base and a very narrow top."],
         "hard": ["I'm surrounded by ever-shifting sands."]
     },
@@ -112,7 +113,7 @@ great_wall_of_china = Secret(
     "great wall of china",
     {
         "easy": ["My ancient stones stretch for miles and miles."],
-        "medium": ["I've seen many battles between empires."],
+        "medium": ["I've seen many 'great' battles between empires."],
         "hard": ["I'm the guardian of ancient states."]
     },
     "famous monuments"
@@ -121,7 +122,7 @@ great_wall_of_china = Secret(
 statue_of_liberty = Secret(
     "statue of liberty",
     {
-        "easy": ["I'm a symbol of liberty in the United States."],
+        "easy": ["I'm a symbol of 'liberty' in the United States."],
         "medium": ["A fiery beacon is in my right hand."],
         "hard": ["A teal crown is upon my might head."]
     },
@@ -131,7 +132,7 @@ statue_of_liberty = Secret(
 taj_mahal = Secret(
     "taj mahal",
     {
-        "easy": ["I'm the final resting place of an emperor's wife."],
+        "easy": ["The final resting place of the emperor's wife, 'Mahal'."],
         "medium": ["My collosal white dome has many small friends."],
         "hard": ["My ivory marble is reflected in water."]
     },

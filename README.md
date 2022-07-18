@@ -67,7 +67,14 @@ You can [**download Python3 here**](https://www.python.org/downloads/).
 and has a terminal or command prompt application installed.
 
 ### Command Line Arguments
-- Type 'bash guess help' into your terminal or command prompt and hit 'enter' or 'return' to open the application help file.
+- Type 'bash guess help' into your terminal or command prompt and press 'return' to open the application help file.
+
+### How to play:
+- Select a category from the list of categories by typing its name or number
+and pressing 'return'.
+- Follow the prompts from the friendly game host to try and guess the secret word!
+- View your stats at the top of the terminal after every game round.
+- Type 'quit' and press 'return' during any input prompt to end the game and see your stats.
 
 ## References
 Python Software Foundation 2022, *random — Generate pseudo-random numbers — Python 3.10.5 documentation*, viewed 10 July 2022,  https://docs.python.org/3/library/random.html.

@@ -8,7 +8,8 @@ class TestGuessingLoop(unittest.TestCase):
     def test_select_random_secret(self):
         guessing_loop = GuessingLoop()
         category = "mythical creatures"
-        self.assertTrue(guessing_loop.get_secret(category))
+        self.assertEqual(guessing_loop.get_secret(
+            category), guessing_loop.current_secret)
 
     # Test selection of a random clue for the given secret
     def test_select_random_clue(self):
@@ -26,6 +27,8 @@ class TestGuessingLoop(unittest.TestCase):
         guessing_loop = GuessingLoop()
         category = "mythical creatures"
         mock_guess_input.side_effect = [
-            "dog", "unicorn", "dragon", "yes", "no"]
-        guessing_loop.start(category)
+            "dog", "unicorn", "dragon"]
+        guessing_loop.guesses_remaining = 0
+        (guessing_loop.start(category))
+        print(guessing_loop.current_secret)
         self.assertNotEqual(guessing_loop.current_secret, "")
